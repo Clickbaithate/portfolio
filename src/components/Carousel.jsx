@@ -1,53 +1,127 @@
-import React from "react";
+import { Link } from 'react-router-dom'; // Import Link
+import { useState } from 'react';
+import Image1 from '../assets/senior.png';
+import Image2 from '../assets/flutter.jpg';
+import Image3 from '../assets/android.png';
 
 const Carousel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const handlePrev = () => {
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentSlide(currentSlide === 0 ? 2 : currentSlide - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentSlide(currentSlide === 2 ? 0 : currentSlide + 1);
+    }
+  };
+
+  const handleTransitionEnd = () => {
+    setIsTransitioning(false);
+  };
 
   return (
-    <div id="indicators-carousel" className="relative w-full" data-carousel="static">
-
-        <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-
-            <div className="hidden duration-700 ease-in-out" data-carousel-item="active">
-                <img src="https://images.pixeden.com/images/imac-psd-mockup-screen-showcase-scene-3_preview.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
-            </div>
-
-            <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="https://unblast.com/wp-content/uploads/2020/05/Website-Mockup.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
-            </div>
-
-            <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="https://dirtylinestudio.com/wp-content/uploads/2023/07/Preview-02-1050x700.webp" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
-            </div>
-
+    <div className="mt-12 md:mt-0 flex justify-center">
+      <div id="static-carousel" className="relative w-full">
+        <div className="relative overflow-hidden rounded-[50px] md:h-[600px] w-[900px]">
+          {/* Manually handle the display of each image */}
+          {[Image1, Image2, Image3].map((image, index) => (
+            <Link to={`/project/${currentSlide}`} key={index}>
+              <div
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  currentSlide === index ? 'opacity-100' : 'opacity-0'
+                }`}
+                onTransitionEnd={handleTransitionEnd}
+              >
+                <img
+                  src={image}
+                  className="absolute block w-full h-full object-cover"
+                  alt={`Slide ${index + 1}`}
+                />
+              </div>
+            </Link>
+          ))}
         </div>
 
-        <div className="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-            <button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-            <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-            <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-            <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-            <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+        {/* Indicators */}
+        <div className="absolute z-30 flex justify-center bottom-5 left-0 right-0">
+          <button
+            type="button"
+            className={`w-4 h-4 rounded-lg mx-2 ${currentSlide === 0 ? 'bg-white' : 'bg-gray-400'}`}
+            aria-label="First Slide"
+            onClick={() => setCurrentSlide(0)}
+          ></button>
+          <button
+            type="button"
+            className={`w-4 h-4 rounded-lg mx-2 ${currentSlide === 1 ? 'bg-white' : 'bg-gray-400'}`}
+            aria-label="Second Slide"
+            onClick={() => setCurrentSlide(1)}
+          ></button>
+          <button
+            type="button"
+            className={`w-4 h-4 rounded-lg mx-2 ${currentSlide === 2 ? 'bg-white' : 'bg-gray-400'}`}
+            aria-label="Third Slide"
+            onClick={() => setCurrentSlide(2)}
+          ></button>
         </div>
 
-        <button type="button" className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-            <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1 1 5l4 4"/>
-                </svg>
-                <span className="sr-only">Previous</span>
-            </span>
+        {/* Navigation buttons */}
+        <button
+          type="button"
+          className="absolute top-1/2 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group transform -translate-y-1/2"
+          onClick={handlePrev}
+        >
+          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
+            <svg
+              className="w-4 h-4 text-black"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M5 1 1 5l4 4"
+              />
+            </svg>
+            <span className="sr-only">Previous</span>
+          </span>
         </button>
-        <button type="button" className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-            <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
-                </svg>
-                <span className="sr-only">Next</span>
-            </span>
+
+        <button
+          type="button"
+          className="absolute top-1/2 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group transform -translate-y-1/2"
+          onClick={handleNext}
+        >
+          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
+            <svg
+              className="w-4 h-4 text-black"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span className="sr-only">Next</span>
+          </span>
         </button>
+      </div>
     </div>
   );
-
-}
+};
 
 export default Carousel;

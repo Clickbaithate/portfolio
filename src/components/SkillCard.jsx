@@ -2,7 +2,7 @@ import React from 'react';
 
 const SkillCard = ({ title, imageUrl, description }) => {
   return (
-    <a href="#" className="flex flex-col items-start bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-[#282a48] dark:hover:bg-gray-700">
+    <a href="#" className="flex flex-col items-start {true ? bg-white : black} bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-[#282a48] dark:hover:bg-gray-700">
       {/* Set a fixed height and use object-fit to control the image display */}
       <div className="relative w-full h-52"> {/* Fixed height for the card */}
         <img 

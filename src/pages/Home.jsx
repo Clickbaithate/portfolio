@@ -78,13 +78,18 @@ const Home = () => {
           <div className="animate-moveUpDown bg-[url('assets/person.svg')] bg-cover w-[600px] h-[600px]"></div>
         </div>
       </div>
+      <h1 className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl">Personal Projects</h1>
+      <div className="">
+        <div className="h-[700px] flex justify-center items-center">
+          <Carousel/>
+        </div>
+      </div>
       <h1 className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl mb-10">Frameworks</h1>
       <Frameworks></Frameworks>
       <h1 className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl mb-10">Languages</h1>
       <Languages></Languages>
       <h1 className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl">Databases and Tools</h1>
       <Tools></Tools>
-      <Carousel></Carousel>
     </div>
   );
 };
