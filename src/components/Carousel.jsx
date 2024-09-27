@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'; // Import Link
 import { useState } from 'react';
-import Image1 from '../assets/senior.png';
-import Image2 from '../assets/flutter.jpg';
+import Image1 from '../assets/react.png';
+import Image2 from '../assets/flutter.png';
 import Image3 from '../assets/android.png';
 
 const Carousel = () => {

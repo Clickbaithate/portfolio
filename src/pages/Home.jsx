@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/navbar';
-import Frameworks from '../components/Frameworks';
-import Languages from '../components/Languages';
-import Tools from '../components/Tools';
 import Carousel from '../components/Carousel';
+import Timeline from '../components/Timeline';
 
 const Home = () => {
   
@@ -84,12 +82,8 @@ const Home = () => {
           <Carousel/>
         </div>
       </div>
-      <h1 className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl mb-10">Frameworks</h1>
-      <Frameworks></Frameworks>
-      <h1 className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl mb-10">Languages</h1>
-      <Languages></Languages>
-      <h1 className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl">Databases and Tools</h1>
-      <Tools></Tools>
+      <h1 className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl mb-5">Skills</h1>
+      <Timeline className="" ></Timeline>
     </div>
   );
 };
