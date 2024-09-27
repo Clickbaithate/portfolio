@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/navbar';
+import Navbar from '../components/Navbar';
 import Carousel from '../components/Carousel';
-import Timeline from '../components/Timeline';
+import timeline from '../components/Timeline';
 
 const Home = () => {
   

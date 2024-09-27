@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
-import MyButton from "./MyButton";
+import MyButton from './MyButton';
 
 const Navbar = () => {
 
