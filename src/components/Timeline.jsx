@@ -77,7 +77,7 @@ const timelineData = [
   }
 ];
 
-const timeline = () => {
+const Timeline = () => {
   return (
     <ol className="relative border-s border-gray-200 dark:border-gray-700 ml-[100px] pb-5">
       {timelineData.map((item, index) => (
@@ -92,4 +92,4 @@ const timeline = () => {
   );
 };
 
-export default timeline;
+export default Timeline;
