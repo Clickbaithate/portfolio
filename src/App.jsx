@@ -10,7 +10,7 @@ const App = () => {
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/project/:index' element={<Project />} /> {/* Add this route */}
+        <Route path='/project/:index' element={<Project />} />
       </Routes>
     </Router>
   );
