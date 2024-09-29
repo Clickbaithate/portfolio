@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Project from './pages/project';
+import Project from './pages/Project';
 import ScrollToTop from './components/scroll_to_top';
 
 const App = () => {
