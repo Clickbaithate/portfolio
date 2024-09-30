@@ -3,6 +3,9 @@ import Navbar from '../components/Navbar';
 import Carousel from '../components/Carousel';
 import Timeline from '../components/Timeline';
 import { Link } from 'react-router-dom';
+import MyButton from '../components/MyButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 const Home = () => {
   
