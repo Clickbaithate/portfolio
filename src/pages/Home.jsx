@@ -46,7 +46,7 @@ const Home = () => {
 
   return (
     <div className="bg-[url('assets/background.svg')] bg-cover min-h-screen">
-      <Navbar />
+      <Navbar id="about" />
       <div className="w-full h-screen flex items-center" style={{ height: 'calc(100vh - 200px)' }}>
         <div className="w-full md:w-1/2 p-4">
           <div className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl">
@@ -76,14 +76,14 @@ const Home = () => {
           <div className="animate-moveUpDown bg-[url('assets/person.svg')] bg-cover w-[600px] h-[600px]"></div>
         </div>
       </div>
-      <h1 className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl">Personal Projects</h1>
+      <h1 id="projects" className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl">Personal Projects</h1>
       <div className="">
         <div className="h-[700px] flex justify-center items-center">
           <Carousel/>
         </div>
       </div>
       <h1 className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl mb-5">Skills</h1>
-      <Timeline className="" ></Timeline>
+      <Timeline id="skills" className="" ></Timeline>
     </div>
   );
 };

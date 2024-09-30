@@ -20,17 +20,17 @@ const Navbar = () => {
             <div className="">
               <ul className="flex items-center space-x-8">
                 <li>
-                  <Link to="/" className="text-white font-bold">
-                    <MyButton>Home</MyButton>
+                  <Link to="#about" className="text-white font-bold">
+                    <MyButton>About</MyButton>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="text-white font-bold ">
+                  <Link to="#skills" className="text-white font-bold ">
                     <MyButton>Skills</MyButton>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="text-white font-bold ">
+                  <Link to="#projects" className="text-white font-bold ">
                     <MyButton>Projects</MyButton>
                   </Link>
                 </li>
