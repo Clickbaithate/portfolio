@@ -83,7 +83,7 @@ const Home = () => {
         </div>
       </div>
       <h1 className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl mb-5">Skills</h1>
-      <Timeline id="skills" className="" ></Timeline>
+      <Timeline id="skills" className=" " ></Timeline>
     </div>
   );
 };
