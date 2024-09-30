@@ -6,6 +6,7 @@ import MyButton from '../components/MyButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
   const roles = ["Web Developer", "Mobile Developer", "Software Engineer"];
@@ -107,6 +108,11 @@ const Home = () => {
                 <li>
                   <Link to="mailto:gaelguzman.dev@gmail.com" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon className="text-white rounded-full w-8 h-8 transition-all ease-in-out duration-500 transform hover:scale-150" icon={faGoogle} />
+                  </Link>
+                </li>
+                <li>
+                  <Link to="https://resume-beta-olive.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon className="text-white rounded-full w-8 h-8 transition-all ease-in-out duration-500 transform hover:scale-150" icon={faFileLines} />
                   </Link>
                 </li>
               </div>
