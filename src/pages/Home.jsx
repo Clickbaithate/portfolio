@@ -46,10 +46,10 @@ const Home = () => {
 
   return (
     <div className="bg-[url('assets/background.svg')] bg-cover min-h-screen">
-      <Navbar id="about" />
+      <Navbar />
       <div className="w-full h-screen flex items-center" style={{ height: 'calc(100vh - 200px)' }}>
         <div className="w-full md:w-1/2 p-4">
-          <div className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl">
+          <div id="about" className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl">
             Hi! I'm Gael!
           </div>
           <div className="text-white text-5xl font-bold ml-[100px] py-4 md:text-5xl text-xl">
@@ -82,8 +82,8 @@ const Home = () => {
           <Carousel/>
         </div>
       </div>
-      <h1 className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl mb-5">Skills</h1>
-      <Timeline id="skills" className=" " ></Timeline>
+      <h1 id="skills" className="text-white text-5xl font-bold ml-[100px] md:text-5xl text-xl mb-5">Skills</h1>
+      <Timeline className="" ></Timeline>
     </div>
   );
 };
