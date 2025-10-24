@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar";
-import Workspace from "./Workspace";
+import WorkspaceView from "./WorkspaceView";
+import SidebarContent from "./SidebarContent";
+import FileExplorer from "./FileExplorer";
 
-const MainContent = () => {
+const MainContent = ({ fileExplorerMode, onSelectFile, currentFile, onCloseExplorer }) => {
   const [menuToggle, setMenuToggle] = useState(false);
   const [currentMenu, setCurrentMenu] = useState("");
 
@@ -15,19 +17,24 @@ const MainContent = () => {
   };
 
   return (
-    <div className="flex flex-grow">
-      {/* Sidebar */}
+    <div className="flex flex-grow relative">
       <Sidebar handleSideMenu={handleSideMenu} currentMenu={currentMenu} />
 
-      {/* Side menu */}
       {menuToggle && (
         <div className="w-1/6 h-full bg-gray-200 border-r border-gray-300">
-          {currentMenu}
+          <SidebarContent currentMenu={currentMenu} />
         </div>
       )}
 
-      {/* Main area */}
-      <Workspace currentMenu={currentMenu} />
+      <WorkspaceView currentFile={currentFile} />
+
+      {fileExplorerMode && (
+        <FileExplorer
+          mode={fileExplorerMode}
+          onSelectFile={onSelectFile}
+          onClose={onCloseExplorer}
+        />
+      )}
     </div>
   );
 };

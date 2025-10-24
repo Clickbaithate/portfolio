@@ -1,58 +1,47 @@
 import { useState, useEffect, useRef } from "react";
 import { VscVscode } from "react-icons/vsc";
+import FileMenu from "./FileMenu";
 
-const TopBar = () => {
-  const [searchToggle, setSearchToggle] = useState(false);
-  const searchRef = useRef(null);
+const TopBar = ({ onOpenFileExplorer }) => {
+  const [openMenu, setOpenMenu] = useState(null);
+  const menuRef = useRef(null);
 
-  // Close when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (searchRef.current && !searchRef.current.contains(event.target)) setSearchToggle(false);
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setOpenMenu(null);
+      }
     };
-
-    if (searchToggle) document.addEventListener("mousedown", handleClickOutside);
-    else document.removeEventListener("mousedown", handleClickOutside);
-
-    // cleanup
+    document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [searchToggle]);
+  }, []);
+
+  const handleMenuClick = (menu) => {
+    setOpenMenu(openMenu === menu ? null : menu);
+  };
 
   return (
-    <div className="w-full h-8 flex items-center justify-between bg-gray-200 relative">
-      {/* Options */}
+    <div className="w-full h-8 flex items-center justify-between bg-gray-200 relative select-none">
       <div className="flex items-end space-x-3 mx-3">
         <VscVscode className="text-blue-500" size={22}/>
-        <div>File</div>
-        <div>Edit</div>
-        <div>Selection</div>
-        <div>View</div>
-        <div>Go</div>
-        <div>Run</div>
-        <div>Terminal</div>
-        <div>Help</div>
+        <div onClick={() => handleMenuClick("File")} className="cursor-pointer hover:bg-gray-300 px-1 rounded">File</div>
+        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Edit</div>
+        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Selection</div>
+        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">View</div>
+        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Go</div>
+        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Run</div>
+        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Terminal</div>
+        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Help</div>
       </div>
 
-      {/* Search Bar */}
-      <div ref={searchRef} className="w-1/3 h-6 text-center rounded-sm relative bg-gray-300 cursor-pointer" onClick={() => setSearchToggle(true)} >
-        Search
-        {searchToggle && (
-          <div className="absolute w-full top-0 left-0 bg-gray-300 rounded-xl shadow-xl z-10">
-            <input type="text" placeholder="Search files by name" className="w-[98%] h-[90%] border-2 text-sm p-1 rounded-sm border-gray-300 bg-gray-400 mt-1" autoFocus />
-            <div className="flex flex-col items-start p-1 space-y-1 text-left text-sm">
-              <p className="hover:bg-gray-200 w-full px-2 rounded-sm">Go to File</p>
-              <p className="hover:bg-gray-200 w-full px-2 rounded-sm">Show and Run Commands</p>
-              <p className="hover:bg-gray-200 w-full px-2 rounded-sm">Search for Text</p>
-              <p className="hover:bg-gray-200 w-full px-2 rounded-sm">Go to Symbol in Editor</p>
-              <p className="hover:bg-gray-200 w-full px-2 rounded-sm">Start Debugging</p>
-              <p className="hover:bg-gray-200 w-full px-2 rounded-sm">Run Task</p>
-              <p className="hover:bg-gray-200 w-full px-2 rounded-sm">More</p>
-            </div>
-          </div>
+      {/* Dropdown */}
+      <div ref={menuRef}>
+        {openMenu === "File" && (
+          <FileMenu onOpenFileExplorer={onOpenFileExplorer}/>
         )}
       </div>
 
-      {/* Window Controls */}
+      {/* Window controls */}
       <div className="flex items-center space-x-2 mx-2">
         <div className="bg-yellow-500 w-4 h-4 rounded-full" />
         <div className="bg-green-500 w-4 h-4 rounded-full" />
