@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { VscVscode } from "react-icons/vsc";
 
 const TopBar = () => {
   const [searchToggle, setSearchToggle] = useState(false);
@@ -7,28 +8,21 @@ const TopBar = () => {
   // Close when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (searchRef.current && !searchRef.current.contains(event.target)) {
-        setSearchToggle(false);
-      }
+      if (searchRef.current && !searchRef.current.contains(event.target)) setSearchToggle(false);
     };
 
-    if (searchToggle) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
+    if (searchToggle) document.addEventListener("mousedown", handleClickOutside);
+    else document.removeEventListener("mousedown", handleClickOutside);
 
     // cleanup
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [searchToggle]);
 
   return (
     <div className="w-full h-8 flex items-center justify-between bg-gray-200 relative">
       {/* Options */}
-      <div className="flex space-x-4 mx-2">
-        <div>logo</div>
+      <div className="flex items-end space-x-3 mx-3">
+        <VscVscode className="text-blue-500" size={22}/>
         <div>File</div>
         <div>Edit</div>
         <div>Selection</div>
@@ -40,20 +34,11 @@ const TopBar = () => {
       </div>
 
       {/* Search Bar */}
-      <div
-        ref={searchRef}
-        className="w-1/3 h-6 text-center rounded-sm relative bg-gray-300 cursor-pointer"
-        onClick={() => setSearchToggle(true)}
-      >
+      <div ref={searchRef} className="w-1/3 h-6 text-center rounded-sm relative bg-gray-300 cursor-pointer" onClick={() => setSearchToggle(true)} >
         Search
         {searchToggle && (
           <div className="absolute w-full top-0 left-0 bg-gray-300 rounded-xl shadow-xl z-10">
-            <input
-              type="text"
-              placeholder="Search files by name"
-              className="w-[98%] h-[90%] border-2 text-sm p-1 rounded-sm border-gray-300 bg-gray-400 mt-1"
-              autoFocus
-            />
+            <input type="text" placeholder="Search files by name" className="w-[98%] h-[90%] border-2 text-sm p-1 rounded-sm border-gray-300 bg-gray-400 mt-1" autoFocus />
             <div className="flex flex-col items-start p-1 space-y-1 text-left text-sm">
               <p className="hover:bg-gray-200 w-full px-2 rounded-sm">Go to File</p>
               <p className="hover:bg-gray-200 w-full px-2 rounded-sm">Show and Run Commands</p>

@@ -1,22 +1,33 @@
 import { useState } from "react";
+import Sidebar from "./Sidebar";
+import Workspace from "./Workspace";
 
 const MainContent = () => {
-
   const [menuToggle, setMenuToggle] = useState(false);
+  const [currentMenu, setCurrentMenu] = useState("");
 
-  return(
-    <div className='flex flex-grow'>
-      <div className='w-16 h-full bg-gray-300'>
-        <div onClick={() => setMenuToggle((prev) => !prev)}>1</div>
-        <div onClick={() => setMenuToggle((prev) => !prev)}>2</div>
-        <div onClick={() => setMenuToggle((prev) => !prev)}>3</div>
-        <div onClick={() => setMenuToggle((prev) => !prev)}>4</div>
-        <div onClick={() => setMenuToggle((prev) => !prev)}>5</div>
-      </div>
+  const handleSideMenu = (menu) => {
+    if (currentMenu === menu) setMenuToggle(!menuToggle);
+    else {
+      setCurrentMenu(menu);
+      setMenuToggle(true);
+    }
+  };
+
+  return (
+    <div className="flex flex-grow">
+      {/* Sidebar */}
+      <Sidebar handleSideMenu={handleSideMenu} currentMenu={currentMenu} />
+
+      {/* Side menu */}
       {menuToggle && (
-        <div className='w-1/6 h-full bg-gray-200'>3</div>
+        <div className="w-1/6 h-full bg-gray-200 border-r border-gray-300">
+          {currentMenu}
+        </div>
       )}
-      <div className='w-full h-full bg-gray-400'>4</div>
+
+      {/* Main area */}
+      <Workspace currentMenu={currentMenu} />
     </div>
   );
 };
