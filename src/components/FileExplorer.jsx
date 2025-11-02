@@ -120,7 +120,7 @@ const FileExplorer = ({ mode, onSelectFile, onClose }) => {
               desktopFiles.map((file) => (
                 <div
                   key={file.name}
-                  onClick={() => onSelectFile(file.name)}
+                  onClick={() => onSelectFile(file)}
                   className="flex hover:bg-blue-500 hover:text-white px-2 py-1 rounded cursor-pointer"
                 >
                   <div className="w-1/2">{file.name}</div>
@@ -134,7 +134,7 @@ const FileExplorer = ({ mode, onSelectFile, onClose }) => {
               folders.map((folder) => (
                 <div
                   key={folder.name}
-                  onClick={() => onSelectFile(folder.name)}
+                  onClick={() => onSelectFile(folder)}
                   className="flex hover:bg-blue-500 hover:text-white px-2 py-1 rounded cursor-pointer"
                 >
                   <div className="w-1/2 flex items-center space-x-2 font-semibold">
