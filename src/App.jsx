@@ -1,21 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import TopBar from './components/TopBar';
 import MainContent from './components/MainContent';
 import BottomBar from './components/BottomBar';
 
 function App() {
+
   const [fileExplorerMode, setFileExplorerMode] = useState(null); // "file" or "folder"
-  const [currentFile, setCurrentFile] = useState(null);
+  const [currentProject, setCurrentProject] = useState(null); // 
+  const [currentFile, setCurrentFile] = useState("readme");
 
   const handleOpenFileExplorer = (mode) => {
     setFileExplorerMode(mode);
   };
 
   const handleSelectFile = (filePath) => {
-    setCurrentFile(filePath);
+    setCurrentProject(filePath);
     setFileExplorerMode(null);
   };
+
+  // useEffect(() => {
+  //   document.documentElement.setAttribute("data-theme", "dracula");
+  // }, []);
 
   return (
     <div className='flex flex-col justify-between w-full h-screen'>
@@ -23,8 +29,10 @@ function App() {
       <MainContent
         fileExplorerMode={fileExplorerMode}
         onSelectFile={handleSelectFile}
-        currentFile={currentFile}
+        currentProject={currentProject}
         onCloseExplorer={() => setFileExplorerMode(null)}
+        currentFile={currentFile}
+        setCurrentFile={setCurrentFile}
       />
       <BottomBar/>
     </div>
