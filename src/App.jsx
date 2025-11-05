@@ -23,6 +23,8 @@ function App() {
   //   document.documentElement.setAttribute("data-theme", "dracula");
   // }, []);
 
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+
   return (
     <div className='flex flex-col justify-between w-full h-screen'>
       <TopBar onOpenFileExplorer={handleOpenFileExplorer}/>
@@ -33,8 +35,9 @@ function App() {
         onCloseExplorer={() => setFileExplorerMode(null)}
         currentFile={currentFile}
         setCurrentFile={setCurrentFile}
+        setPos={setPos}
       />
-      <BottomBar/>
+      <BottomBar line={pos.y} column={pos.x} />
     </div>
   );
 }

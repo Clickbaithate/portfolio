@@ -4,7 +4,7 @@ import WorkspaceView from "./WorkspaceView";
 import SidebarContent from "./SidebarContent";
 import FileExplorer from "./FileExplorer";
 
-const MainContent = ({ fileExplorerMode, onSelectFile, currentProject, onCloseExplorer, currentFile, setCurrentFile }) => {
+const MainContent = ({ fileExplorerMode, onSelectFile, currentProject, onCloseExplorer, currentFile, setCurrentFile, setPos }) => {
   const [menuToggle, setMenuToggle] = useState(true);
   const [currentMenu, setCurrentMenu] = useState("File");
 
@@ -17,7 +17,7 @@ const MainContent = ({ fileExplorerMode, onSelectFile, currentProject, onCloseEx
   };
 
   return (
-    <div className="flex flex-grow relative">
+    <div className="flex flex-grow relative" onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}>
       <Sidebar handleSideMenu={handleSideMenu} currentMenu={currentMenu} />
 
       {menuToggle && (

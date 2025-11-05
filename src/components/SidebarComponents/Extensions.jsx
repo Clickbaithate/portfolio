@@ -1,11 +1,17 @@
 import { FaEllipsis } from "react-icons/fa6";
-import { VscClearAll, VscFilter, VscRefresh, VscSettingsGear } from "react-icons/vsc";
+import {
+  VscClearAll,
+  VscFilter,
+  VscRefresh,
+  VscSettingsGear,
+} from "react-icons/vsc";
 import visual from "../../assets/visual.webp";
 
 const extensions = [
   {
     name: "Discord Rich Presence",
-    description: "Highly customizable Discord Rich Presence extension for Visual Studio Code",
+    description:
+      "Highly customizable Discord Rich Presence extension for Visual Studio Code",
     author: "leonardssh",
   },
   {
@@ -15,7 +21,8 @@ const extensions = [
   },
   {
     name: "Gatito Theme Fork",
-    description: "Minimalistic and modern looking fork of fantastic Oceanic theme.",
+    description:
+      "Minimalistic and modern looking fork of fantastic Oceanic theme.",
     author: "icyleaf",
   },
   {
@@ -46,7 +53,8 @@ const extensions = [
   },
   {
     name: "Live Share",
-    description: "Real-time collaborative development from the comfort of your favorite tools.",
+    description:
+      "Real-time collaborative development from the comfort of your favorite tools.",
     author: "Microsoft",
   },
   {
@@ -58,31 +66,33 @@ const extensions = [
 
 const Extensions = () => {
   return (
-    <div className="flex flex-col w-full h-[calc(100vh-3.5rem)] overflow-y-scroll">
+    <div className="flex flex-col w-full h-[calc(100vh-3.8rem)]">
+      {/* Fixed Header + Search */}
+      <div className="flex flex-col flex-shrink-0 bg-white z-10">
+        {/* Header */}
+        <div className="flex items-center justify-between mx-4 py-2">
+          <p className="font-medium">Extensions</p>
+          <div className="flex items-center space-x-3">
+            <VscRefresh />
+            <FaEllipsis />
+          </div>
+        </div>
 
-      {/* Header */}
-      <div className="flex items-center justify-between mx-4 py-2">
-        <p className="font-medium">Extensions</p>
-        <div className="flex items-center space-x-3">
-          <VscRefresh />
-          <FaEllipsis />
+        {/* Search Bar */}
+        <div className="flex items-center justify-between mx-4 p-2 bg-gray-200 rounded mt-1">
+          <input
+            className="w-[80%] p-1 outline-none bg-transparent"
+            placeholder="Search Extensions"
+          />
+          <div className="flex items-center space-x-4">
+            <VscClearAll size={18} />
+            <VscFilter size={18} />
+          </div>
         </div>
       </div>
 
-      {/* Search Bar */}
-      <div className="flex items-center justify-between mx-4 p-2 bg-gray-200 rounded">
-        <input
-          className="w-[80%] p-1 outline-none bg-transparent"
-          placeholder="Search Extensions"
-        />
-        <div className="flex items-center space-x-4">
-          <VscClearAll size={18} />
-          <VscFilter size={18} />
-        </div>
-      </div>
-
-      {/* Extensions List */}
-      <div className="mt-2">
+      {/* Scrollable List */}
+      <div className="flex-1 overflow-y-auto mt-2">
         {extensions.map((ext, i) => (
           <div
             key={i}

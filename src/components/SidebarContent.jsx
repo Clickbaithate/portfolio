@@ -19,7 +19,7 @@ const SidebarContent = ({ currentMenu, currentProject, fileExplorerMode, current
   if (currentMenu === "File" && (!currentProject || currentProject?.kind !== "Folder")) {
     return(
       <div className="flex flex-col">
-        <div className="flex w-full items-center justify-between px-5 py-2">
+        <div className="flex w-full items-center justify-between px-4 py-2">
           <p className="font-semibold">Explorer</p>
           <FaEllipsis className="cursor-pointer" />
         </div>
@@ -50,7 +50,7 @@ const SidebarContent = ({ currentMenu, currentProject, fileExplorerMode, current
   if (currentMenu === "File") {
     return (
       <div className="flex flex-col">
-        <div className="flex w-full items-center justify-between px-5 py-2">
+        <div className="flex w-full items-center justify-between px-4 py-2">
           <p className="font-semibold">Explorer</p>
           <FaEllipsis className="cursor-pointer" />
         </div>
