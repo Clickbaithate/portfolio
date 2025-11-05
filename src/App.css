@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+  user-select: none;
+}
+
 /* Map semantic tokens to theme variables */
 @theme {
   --color-bg: var(--theme-bg);
