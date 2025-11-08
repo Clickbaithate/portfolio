@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { VscVscode } from "react-icons/vsc";
 import FileMenu from "./FileMenu";
 
-const TopBar = ({ onOpenFileExplorer }) => {
+const TopBar = ({ onOpenFileExplorer, fileExplorerMode }) => {
   const [openMenu, setOpenMenu] = useState(null);
   const menuRef = useRef(null);
 
@@ -24,7 +24,7 @@ const TopBar = ({ onOpenFileExplorer }) => {
     <div className="w-full h-8 flex items-center justify-between bg-gray-200 relative select-none">
       <div className="flex items-end space-x-3 mx-3">
         <VscVscode className="text-blue-500" size={22}/>
-        <div onClick={() => handleMenuClick("File")} className="cursor-pointer hover:bg-gray-300 px-1 rounded">File</div>
+        <div onClick={() => {if (fileExplorerMode === null) handleMenuClick("File")}} className="cursor-pointer hover:bg-gray-300 px-1 rounded">File</div>
         <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Edit</div>
         <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Selection</div>
         <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">View</div>
@@ -37,7 +37,7 @@ const TopBar = ({ onOpenFileExplorer }) => {
       {/* Dropdown */}
       <div ref={menuRef}>
         {openMenu === "File" && (
-          <FileMenu onOpenFileExplorer={onOpenFileExplorer}/>
+          <FileMenu onOpenFileExplorer={onOpenFileExplorer} onCloseMenu={() => setOpenMenu(null)} />
         )}
       </div>
 

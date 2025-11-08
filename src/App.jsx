@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className='flex flex-col justify-between w-full h-screen'>
-      <TopBar onOpenFileExplorer={handleOpenFileExplorer}/>
+      <TopBar onOpenFileExplorer={handleOpenFileExplorer} fileExplorerMode={fileExplorerMode}/>
       <MainContent
         fileExplorerMode={fileExplorerMode}
         onSelectFile={handleSelectFile}
