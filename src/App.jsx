@@ -19,14 +19,14 @@ function App() {
     setFileExplorerMode(null);
   };
 
-  // useEffect(() => {
-  //   document.documentElement.setAttribute("data-theme", "dracula");
-  // }, []);
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", "github-dark");
+  }, []);
 
   const [pos, setPos] = useState({ x: 0, y: 0 });
 
   return (
-    <div className='flex flex-col justify-between w-full h-screen'>
+    <div className='flex flex-col justify-between w-full h-screen font-mono'>
       <TopBar onOpenFileExplorer={handleOpenFileExplorer} fileExplorerMode={fileExplorerMode}/>
       <MainContent
         fileExplorerMode={fileExplorerMode}

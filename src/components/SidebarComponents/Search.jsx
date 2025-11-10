@@ -18,11 +18,11 @@ const Search = () => {
       ]
     },
     { 
-      name: "index.js", 
+      name: "App.jsx",
       lines: [
         "import React from 'react';",
-        "import ReactDOM from 'react-dom';",
-        "ReactDOM.render(<App />, document.getElementById('root'));"
+        "const App = () => <h1>Hello World</h1>;",
+        "export default App;"
       ]
     },
     { 
@@ -56,7 +56,7 @@ const Search = () => {
       {/* Search Inputs */}
       <div className="flex">
         <div
-          className="w-[7%] flex items-center justify-center border-2 my-2 ml-2"
+          className="w-[7%] flex items-center justify-center border-2 my-2 ml-2 border-accent text-text-accent"
           style={{ height: toggle ? "calc(2*2rem + 0.5rem)" : "2rem" }}
           onClick={() => setToggle(!toggle)}
         >
@@ -64,14 +64,14 @@ const Search = () => {
         </div>
         <div className="flex flex-col flex-1 space-y-2 p-2">
           <input
-            className="border-2 px-2 py-1 w-full h-8"
+            className="border-2 px-2 py-1 w-full h-8 outline-none border-accent"
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="Search"
           />
           {toggle && (
             <input
-              className="border-2 px-2 py-1 w-full h-8"
+              className="border-2 px-2 py-1 w-full h-8 outline-none border-accent"
               value={replace}
               onChange={(e) => setReplace(e.target.value)}
               placeholder="Replace"
@@ -82,7 +82,7 @@ const Search = () => {
 
       {/* Show search results */}
       {text && (
-        <div className="mt-4 space-y-2 font-mono text-sm text-gray-100">
+        <div className="mt-4 space-y-2 text-sm text-text">
           {files.map((file, index) => (
             <div key={index} className="pl-2">
               <div 
@@ -90,14 +90,14 @@ const Search = () => {
                 onClick={() => toggleFile(file.name)}
               >
                 {expanded[file.name] ? (
-                  <FaChevronDown size={12} className="text-gray-400" />
+                  <FaChevronDown size={12} className="text-text" />
                 ) : (
-                  <FaChevronRight size={12} className="text-gray-400" />
+                  <FaChevronRight size={12} className="text-text-muted" />
                 )}
                 <span className="font-semibold">{file.name}</span>
               </div>
               {expanded[file.name] && (
-                <div className="pl-5 text-green-400 space-y-1">
+                <div className="pl-5 text-text-accent space-y-1">
                   {file.lines.map((line, i) => (
                     <div key={i} className="truncate pr-6">{line}</div>
                   ))}

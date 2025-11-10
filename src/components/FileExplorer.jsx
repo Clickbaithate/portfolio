@@ -46,10 +46,10 @@ const FileExplorer = ({ mode, onSelectFile, onClose }) => {
         width === "w-full" ? "items-start justify-start" : "items-center justify-center"
       } z-30`}
     >
-      <div className={`shadow-lg flex rounded-xl bg-gray-200 ${width} ${height} ${position}`}>
+      <div className={`shadow-lg flex rounded-xl bg-bg text-text ${width} ${height} ${position}`}>
         {/* Sidebar */}
-        <div className="flex flex-col min-w-[150px] items-start rounded-l-xl bg-gray-400">
-          <div className="flex space-x-2 p-3">
+        <div className="flex flex-col min-w-[150px] items-start rounded-l-xl bg-bg-accent">
+          <div className="flex space-x-2 p-3 text-black">
             <div className="w-4 h-4 rounded-full bg-red-500 flex items-center justify-center cursor-pointer" onClick={onClose}>
               <IoIosClose />
             </div>
@@ -65,8 +65,8 @@ const FileExplorer = ({ mode, onSelectFile, onClose }) => {
             <p className="font-semibold mt-2">Favorites</p>
             <div className="flex items-center space-x-1 my-1 pl-2"><MdAccessTime /><p>Recents</p></div>
             <div className="flex items-center space-x-1 my-1 pl-2"><SiAppstore /><p>Applications</p></div>
-            <div className={`flex items-center space-x-1 my-1 pl-2 w-full rounded-md ${mode === "file" ? "bg-gray-300" : ""}`}><BsWindowDesktop /><p>Desktop</p></div>
-            <div className={`flex items-center space-x-1 my-1 pl-2 w-full rounded-md ${mode === "folder" ? "bg-gray-300" : ""}`}><CiFileOn /><p>Documents</p></div>
+            <div className={`flex items-center space-x-1 my-1 pl-2 w-full rounded-md ${mode === "file" ? "bg-bg" : ""}`}><BsWindowDesktop /><p>Desktop</p></div>
+            <div className={`flex items-center space-x-1 my-1 pl-2 w-full rounded-md ${mode === "folder" ? "bg-bg" : ""}`}><CiFileOn /><p>Documents</p></div>
 
             <p className="font-semibold mt-4">Locations</p>
             <div className="flex items-center space-x-1 my-1 w-full pl-2"><MdOutlineLaptopMac /><p className="truncate">Gael's MacBook Pro</p></div>
@@ -80,7 +80,7 @@ const FileExplorer = ({ mode, onSelectFile, onClose }) => {
         {/* Main Content */}
         <div className="flex flex-col w-full">
           {/* Header */}
-          <div className="flex justify-between w-full rounded-tr-xl bg-gray-300">
+          <div className="flex justify-between w-full rounded-tr-xl bg-bg">
             <div className="flex items-center space-x-8 pl-8 py-4">
               <FaChevronLeft />
               <FaChevronRight className="text-gray-400" />
@@ -93,7 +93,7 @@ const FileExplorer = ({ mode, onSelectFile, onClose }) => {
           </div>
 
           {/* Column Headers */}
-          <div className="flex w-full border-b border-gray-400 bg-gray-100 text-sm font-semibold px-8 py-2">
+          <div className="flex w-full border-y border-gray-400 text-sm font-semibold px-8 py-2 bg-bg">
             <div className="w-1/2 flex items-center justify-between">
               <span>Name</span>
               <div className="flex items-center space-x-1">
@@ -121,7 +121,7 @@ const FileExplorer = ({ mode, onSelectFile, onClose }) => {
                 <div
                   key={file.name}
                   onClick={() => onSelectFile(file)}
-                  className="flex hover:bg-blue-500 hover:text-white px-2 py-1 rounded cursor-pointer"
+                  className="flex hover:bg-bg-accent hover:text-white px-2 py-1 rounded cursor-pointer"
                 >
                   <div className="w-1/2">{file.name}</div>
                   <div className="w-1/4">{file.date}</div>
@@ -135,7 +135,7 @@ const FileExplorer = ({ mode, onSelectFile, onClose }) => {
                 <div
                   key={folder.name}
                   onClick={() => onSelectFile(folder)}
-                  className="flex hover:bg-blue-500 hover:text-white px-2 py-1 rounded cursor-pointer"
+                  className="flex hover:bg-bg-accent hover:text-white px-2 py-1 rounded cursor-pointer"
                 >
                   <div className="w-1/2 flex items-center space-x-2 font-semibold">
                     <FaChevronRight className="w-3 h-3 text-gray-400"/>

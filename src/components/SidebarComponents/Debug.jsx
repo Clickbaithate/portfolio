@@ -7,11 +7,11 @@ const Debug = () => {
         <p>RUN AND DEBUG: RUN</p>
         <FaEllipsis/>
       </div>
-      <div className="mx-4 p-2 text-center bg-blue-200">Run and Debug</div>
+      <div className="mx-4 p-2 text-center bg-bg-accent-2 text-text">Run and Debug</div>
       <p className="mx-4">To customize Run and Debug create a launch.json file.</p>
-      <div className="mx-4 p-2 text-center bg-blue-200">JavaScript Debug Terminal</div>
+      <div className="mx-4 p-2 text-center bg-bg-accent-2 text-text">JavaScript Debug Terminal</div>
       <p className="mx-4">You can use the JavaScript Debug Terminal to debug Node.js processes run on the command line.</p>
-      <div className="mx-4 p-2 text-center bg-blue-200">Debug URL</div>
+      <div className="mx-4 p-2 text-center bg-bg-accent-2 text-text">Debug URL</div>
     </div>
   );
 }

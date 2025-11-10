@@ -17,10 +17,10 @@ const Tooltip = ({ message, children }) => {
     <div className="relative flex items-center group">
       {children}
       <div className={`
-        absolute bottom-[140%] left-1/2 px-2 py-1 ${message === "Current Git branch" ? "-translate-x-1/4" : (message === "No Notifications" ? "-translate-x-23 -translate-y-1" : (message === "Prettier - Code Formatter" ? "-translate-x-22" : "-translate-x-1/2"))}
+        absolute bottom-[140%] left-1/2 px-2 py-1 ${message === "Current Git branch" ? "-translate-x-2/9" : (message === "No Notifications" ? "-translate-x-27 -translate-y-1" : (message === "Prettier - Code Formatter" ? "-translate-x-26" : "-translate-x-1/2"))}
         text-xs rounded opacity-0 duration-150 z-50
         group-hover:opacity-100 pointer-events-none ${message === "GitHub Copilot" ? "-translate-y-1" : ""}
-        whitespace-nowrap transition-all text-white bg-gray-800
+        whitespace-nowrap transition-all text-text ${message !== "Current Git branch" && message !== "No problems detected" && message !== "Active workspace" ? "bg-bg" : "bg-bg-accent"}
       `}>
         {message}
       </div>
@@ -31,7 +31,7 @@ const Tooltip = ({ message, children }) => {
 const BottomBar = ({ line, column }) => {
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white text-sm px-3 py-1 flex items-center justify-between select-none z-40">
+    <div className="fixed bottom-0 left-0 right-0 text-sm px-3 py-1 flex items-center justify-between select-none z-40 border-t-1 border-accent text-text bg-bg">
       {/* LEFT SIDE */}
       <div className="flex items-center space-x-4">
         <Tooltip message="Current Git branch">

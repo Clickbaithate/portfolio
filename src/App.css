@@ -7,7 +7,13 @@
 /* Map semantic tokens to theme variables */
 @theme {
   --color-bg: var(--theme-bg);
+  --color-bg-accent: var(--theme-bg-accent);
+  --color-bg-accent-2: var(--theme-bg-accent-2);
   --color-text: var(--theme-text);
+  --color-text-muted: var(--theme-text-muted);
+  --color-text-accent: var(--theme-text-accent);
+  --color-text-accent-2: var(--theme-text-accent-2);
+  --color-border: var(--theme-border);
   --color-accent: var(--theme-accent);
 }
 
@@ -16,35 +22,65 @@
   /* 🟡 Light / Default */
   :root {
     --theme-bg: hsl(0, 0%, 100%);
+    --theme-bg-accent: hsl(0, 0%, 96%);
+    --theme-bg-accent-2: hsl(212, 100%, 90%);
     --theme-text: hsl(220, 13%, 10%);
-    --theme-accent: hsl(212, 100%, 50%); /* bright blue link accent */
+    --theme-text-muted: hsl(220, 10%, 40%);
+    --theme-text-accent: hsl(212, 100%, 45%);
+    --theme-text-accent-2: hsl(326, 100%, 50%);
+    --theme-border: hsl(0, 0%, 85%);
+    --theme-accent: hsl(212, 100%, 50%);
   }
 
   /* ⚫ GitHub Dark */
   [data-theme="github-dark"] {
     --theme-bg: hsl(220, 13%, 18%);
+    --theme-bg-accent: hsl(220, 13%, 25%);
+    --theme-bg-accent-2: hsl(212, 100%, 30%);
     --theme-text: hsl(210, 17%, 82%);
-    --theme-accent: hsl(212, 100%, 60%); /* blue accent */
+    --theme-text-muted: hsl(210, 10%, 60%);
+    --theme-text-accent: hsl(212, 100%, 70%);
+    --theme-text-accent-2: hsl(176, 100%, 70%);
+    --theme-border: hsl(220, 13%, 25%);
+    --theme-accent: hsl(212, 100%, 60%);
   }
 
   /* 💜 Dracula */
   [data-theme="dracula"] {
     --theme-bg: hsl(231, 15%, 18%);
+    --theme-bg-accent: hsl(231, 15%, 24%);
+    --theme-bg-accent-2: hsl(326, 100%, 60%);
     --theme-text: hsl(60, 30%, 96%);
-    --theme-accent: hsl(326, 100%, 74%); /* pink accent */
+    --theme-text-muted: hsl(60, 10%, 70%);
+    --theme-text-accent: hsl(326, 100%, 74%);
+    --theme-text-accent-2: hsl(271, 100%, 80%);
+    --theme-border: hsl(231, 15%, 28%);
+    --theme-accent: hsl(326, 100%, 74%);
   }
 
   /* 💚 Monokai */
   [data-theme="monokai"] {
     --theme-bg: hsl(70, 8%, 15%);
+    --theme-bg-accent: hsl(70, 8%, 22%);
+    --theme-bg-accent-2: hsl(110, 70%, 40%);
     --theme-text: hsl(60, 30%, 90%);
-    --theme-accent: hsl(110, 70%, 60%); /* green accent */
+    --theme-text-muted: hsl(60, 10%, 70%);
+    --theme-text-accent: hsl(110, 70%, 60%);
+    --theme-text-accent-2: hsl(60, 100%, 60%);
+    --theme-border: hsl(70, 8%, 25%);
+    --theme-accent: hsl(110, 70%, 60%);
   }
 
   /* 🟠 Solarized Dark */
   [data-theme="solarized-dark"] {
     --theme-bg: hsl(192, 13%, 14%);
+    --theme-bg-accent: hsl(192, 13%, 20%);
+    --theme-bg-accent-2: hsl(176, 100%, 35%);
     --theme-text: hsl(44, 87%, 94%);
-    --theme-accent: hsl(176, 100%, 40%); /* cyan accent */
+    --theme-text-muted: hsl(44, 50%, 70%);
+    --theme-text-accent: hsl(176, 100%, 60%);
+    --theme-text-accent-2: hsl(44, 100%, 70%);
+    --theme-border: hsl(192, 13%, 25%);
+    --theme-accent: hsl(176, 100%, 40%);
   }
 }

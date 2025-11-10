@@ -21,17 +21,17 @@ const TopBar = ({ onOpenFileExplorer, fileExplorerMode }) => {
   };
 
   return (
-    <div className="w-full h-8 flex items-center justify-between bg-gray-200 relative select-none">
+    <div className="w-full h-8 flex items-center justify-between relative select-none text-text border-b-1 border-accent bg-bg">
       <div className="flex items-end space-x-3 mx-3">
         <VscVscode className="text-blue-500" size={22}/>
-        <div onClick={() => {if (fileExplorerMode === null) handleMenuClick("File")}} className="cursor-pointer hover:bg-gray-300 px-1 rounded">File</div>
-        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Edit</div>
-        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Selection</div>
-        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">View</div>
-        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Go</div>
-        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Run</div>
-        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Terminal</div>
-        <div className="cursor-pointer hover:bg-gray-300 px-1 rounded">Help</div>
+        <div onClick={() => {if (fileExplorerMode === null) handleMenuClick("File")}} className="cursor-pointer px-1 rounded hover:bg-bg-accent">File</div>
+        <div className="cursor-pointer px-1 rounded hover:bg-bg-accent">Edit</div>
+        <div className="cursor-pointer px-1 rounded hover:bg-bg-accent">Selection</div>
+        <div className="cursor-pointer px-1 rounded hover:bg-bg-accent">View</div>
+        <div className="cursor-pointer px-1 rounded hover:bg-bg-accent">Go</div>
+        <div className="cursor-pointer px-1 rounded hover:bg-bg-accent">Run</div>
+        <div className="cursor-pointer px-1 rounded hover:bg-bg-accent">Terminal</div>
+        <div className="cursor-pointer px-1 rounded hover:bg-bg-accent">Help</div>
       </div>
 
       {/* Dropdown */}

@@ -25,20 +25,20 @@ const SidebarContent = ({ currentMenu, currentProject, fileExplorerMode, current
         </div>
         {folderOpenMessage ? (
           <div className="flex flex-col">
-            <div className="flex items-center px-2 cursor-pointer hover:bg-gray-100" onClick={() => setFolderOpenMessage((prev) => !prev)}>
+            <div className="flex items-center px-2 cursor-pointer hover:bg-bg-accent" onClick={() => setFolderOpenMessage((prev) => !prev)}>
               <FaChevronDown size={12}/>
               <p className="pl-2">NO FOLDER OPEN</p>
             </div>
             <div className="flex flex-col">
               <p className="mx-4 pt-4">You have not yet opened a folder.</p>
-              <div className="py-1 w-[90%] mx-4 text-center rounded-sm my-3 bg-blue-400 text-white">Open Folder</div>
+              <div className="py-1 w-[90%] mx-4 text-center rounded-sm my-3 bg-bg-accent-2 text-text">Open Folder</div>
               <p className="mx-4">Opening a folder will close all currently open editors. To keep them open, add a folder instead.</p>
               <p className="mx-4 py-3">You can clone a repository locally.</p>
-              <div className="py-1 w-[90%] mx-4 text-center rounded-sm bg-blue-400 text-white">Clone Repository</div>
+              <div className="py-1 w-[90%] mx-4 text-center rounded-sm bg-bg-accent-2 text-text">Clone Repository</div>
             </div>
           </div>
         ) : (
-          <div className="flex items-center px-2 cursor-pointer hover:bg-gray-100" onClick={() => setFolderOpenMessage((prev) => !prev)}>
+          <div className="flex items-center px-2 cursor-pointer hover:bg-bg-accent" onClick={() => setFolderOpenMessage((prev) => !prev)}>
             <FaChevronRight size={12}/>
             <p className="pl-2">NO FOLDER OPEN</p>
           </div>
@@ -55,18 +55,18 @@ const SidebarContent = ({ currentMenu, currentProject, fileExplorerMode, current
           <FaEllipsis className="cursor-pointer" />
         </div>
         <div className="flex flex-col">
-          <div className="flex items-center px-2 cursor-pointer hover:bg-gray-100" onClick={() => setShowProject((prev) => !prev)}>
+          <div className="flex items-center px-2 cursor-pointer hover:bg-bg-accent" onClick={() => setShowProject((prev) => !prev)}>
             {showProject ? <FaChevronDown size={12}/> : <FaChevronRight size={12}/>}
             <p className="pl-2">{currentProject.name}</p>
           </div>
           {showProject && (
             <div className="flex flex-col mx-4">
-              <p onClick={() => setCurrentFile("readme")} className="flex items-center space-x-1 px-2 cursor-pointer rounded-sm hover:bg-gray-200"> <IoMdInformationCircleOutline className="text-blue-500"/> <p>README.md</p> </p>
-              <p onClick={() => setCurrentFile("architecture")} className="flex items-center space-x-1 px-2 cursor-pointer rounded-sm hover:bg-gray-200"> <MdPhotoLibrary className="text-purple-500"/> <p>architecture.png</p> </p>
-              <p onClick={() => setCurrentFile("backend")} className="flex items-center space-x-1 px-2 cursor-pointer rounded-sm hover:bg-gray-200"> <IoLogoJavascript className="text-yellow-400"/> <p>backend.js</p> </p>
-              <p onClick={() => setCurrentFile("frontend")} className="flex items-center space-x-1 px-2 cursor-pointer rounded-sm hover:bg-gray-200"> <IoLogoReact className="text-blue-500"/> <p>frontend.jsx</p> </p>
-              <p onClick={() => setCurrentFile("websocket")} className="flex items-center space-x-1 px-2 cursor-pointer rounded-sm hover:bg-gray-200"> <IoLogoPython className="text-blue-400"/> <p>websocket.py</p> </p>
-              <p onClick={() => setCurrentFile("deployment")} className="flex items-center space-x-1 px-2 cursor-pointer rounded-sm hover:bg-gray-200"> <TbExclamationMark className="text-purple-400"/> <p>deployment.yaml</p> </p>
+              <p onClick={() => setCurrentFile("readme")} className="flex items-center space-x-1 px-2 cursor-pointer rounded-sm hover:bg-bg-accent"> <IoMdInformationCircleOutline className="text-blue-500"/> <p>README.md</p> </p>
+              <p onClick={() => setCurrentFile("architecture")} className="flex items-center space-x-1 px-2 cursor-pointer rounded-sm hover:bg-bg-accent"> <MdPhotoLibrary className="text-purple-500"/> <p>architecture.png</p> </p>
+              <p onClick={() => setCurrentFile("backend")} className="flex items-center space-x-1 px-2 cursor-pointer rounded-sm hover:bg-bg-accent"> <IoLogoJavascript className="text-yellow-400"/> <p>backend.js</p> </p>
+              <p onClick={() => setCurrentFile("frontend")} className="flex items-center space-x-1 px-2 cursor-pointer rounded-sm hover:bg-bg-accent"> <IoLogoReact className="text-blue-500"/> <p>frontend.jsx</p> </p>
+              <p onClick={() => setCurrentFile("websocket")} className="flex items-center space-x-1 px-2 cursor-pointer rounded-sm hover:bg-bg-accent"> <IoLogoPython className="text-blue-400"/> <p>websocket.py</p> </p>
+              <p onClick={() => setCurrentFile("deployment")} className="flex items-center space-x-1 px-2 cursor-pointer rounded-sm hover:bg-bg-accent"> <TbExclamationMark className="text-purple-400"/> <p>deployment.yaml</p> </p>
             </div>
           )}
         </div>

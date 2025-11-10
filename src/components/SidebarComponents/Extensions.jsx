@@ -68,7 +68,7 @@ const Extensions = () => {
   return (
     <div className="flex flex-col w-full h-[calc(100vh-3.8rem)]">
       {/* Fixed Header + Search */}
-      <div className="flex flex-col flex-shrink-0 bg-white z-10">
+      <div className="flex flex-col flex-shrink-0 bg-bg z-10">
         {/* Header */}
         <div className="flex items-center justify-between mx-4 py-2">
           <p className="font-medium">Extensions</p>
@@ -79,7 +79,7 @@ const Extensions = () => {
         </div>
 
         {/* Search Bar */}
-        <div className="flex items-center justify-between mx-4 p-2 bg-gray-200 rounded mt-1">
+        <div className="flex items-center justify-between mx-4 p-2 bg-bg-accent rounded mt-1">
           <input
             className="w-[80%] p-1 outline-none bg-transparent"
             placeholder="Search Extensions"
@@ -96,15 +96,15 @@ const Extensions = () => {
         {extensions.map((ext, i) => (
           <div
             key={i}
-            className="flex items-center w-full px-4 py-2 hover:bg-gray-100 transition cursor-pointer"
+            className="flex items-center w-full px-4 py-2 hover:bg-bg-accent transition cursor-pointer"
           >
             <img src={visual} alt="extension" className="w-8 h-8 mr-3 rounded" />
             <div className="flex flex-col flex-1 min-w-0">
-              <p className="font-medium">{ext.name}</p>
-              <p className="text-sm text-gray-500 truncate">{ext.description}</p>
-              <div className="flex items-center justify-between text-xs text-gray-500 mt-1">
+              <p className="font-medium text-text-accent">{ext.name}</p>
+              <p className="text-sm text-text truncate">{ext.description}</p>
+              <div className="flex items-center justify-between text-xs text-text-muted mt-1">
                 <p>{ext.author}</p>
-                <VscSettingsGear className="text-gray-600 hover:text-gray-800 cursor-pointer" />
+                <VscSettingsGear className="text-text-muted hover:text-text cursor-pointer" />
               </div>
             </div>
           </div>

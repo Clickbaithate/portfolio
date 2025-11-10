@@ -10,10 +10,10 @@ const Workspace = () => {
   ];
 
   return (
-    <div className="flex flex-col flex-1 h-full items-center justify-center bg-gray-400 text-black">
+    <div className="flex flex-col flex-1 h-full items-center justify-center bg-bg-accent text-text">
       <img src={studio} alt="Visual Studio" className="w-1/5 mb-6" />
 
-      <div className="w-2/3">
+      <div className="w-2/3 grid gap-y-2">
         {commands.map((cmd, index) => (
           <div key={index} className="grid grid-cols-2">
             {/* Command name */}
@@ -23,7 +23,7 @@ const Workspace = () => {
             <p className="text-left pl-2">
               {cmd.keys.map((key, i) => (
                 <span key={i}>
-                  <span className="bg-gray-300 px-1 mx-0.5 rounded">{key}</span>
+                  <span className="bg-bg py-1 px-1 mx-0.5 rounded">{key}</span>
                   {i < cmd.keys.length - 1 && " + "}
                 </span>
               ))}
