@@ -82,9 +82,9 @@ const WorkspaceView = ({ currentProject, currentFile }) => {
       lastDeployed: "2h ago",
       services: [
         { name: "Frontend", platform: "Vercel", desc: "Next.js app auto-deployed", status: "✅ Live", latency: "182ms", color: "bg-blue-400", icon: <SiVercel className="text-gray-300" /> },
-        { name: "Backend", platform: "Render", desc: "Node.js WebSocket API", status: "🟢 Healthy", latency: "207ms", color: "bg-green-400", icon: <SiRender className="text-gray-300" /> },
-        { name: "Database", platform: "Supabase", desc: "Postgres + Auth instance", status: "🟢 Connected", latency: "153ms", color: "bg-emerald-400", icon: <SiSupabase className="text-gray-300" /> },
-        { name: "WebSocket", platform: "Node", desc: "Real-time tactical sync", status: "⚡ Active", latency: "89ms", color: "bg-yellow-400", icon: <FaCloudUploadAlt className="text-gray-300" /> },
+        { name: "Backend", platform: "Render", desc: "Node.js WebSocket API", status: "🟢 Healthy", latency: "207ms", color: "bg-green-400", icon: <SiRender className="text-blue-300" /> },
+        { name: "Database", platform: "Supabase", desc: "Postgres + Auth instance", status: "🟢 Connected", latency: "153ms", color: "bg-emerald-400", icon: <SiSupabase className="text-green-300" /> },
+        { name: "WebSocket", platform: "Node", desc: "Real-time tactical sync", status: "⚡ Active", latency: "89ms", color: "bg-yellow-400", icon: <FaCloudUploadAlt className="text-yellow-300" /> },
       ],
     },
     {
@@ -145,10 +145,10 @@ const WorkspaceView = ({ currentProject, currentFile }) => {
       ],
       lastDeployed: "3h ago",
       services: [
-        { name: "Frontend", platform: "Django", desc: "Web app frontend", status: "✅ Live", latency: "192ms", color: "bg-blue-400", icon: <SiDjango className="text-gray-300" /> },
-        { name: "Backend", platform: "Supabase", desc: "Python API & tasks", status: "🟢 Healthy", latency: "210ms", color: "bg-green-400", icon: <SiPython className="text-gray-300" /> },
-        { name: "Database", platform: "PostgreSQL", desc: "Collection DB", status: "🟢 Connected", latency: "158ms", color: "bg-emerald-400", icon: <SiPostgresql className="text-gray-300" /> },
-        { name: "Background Task", platform: "Celery", desc: "Async data processing", status: "⚡ Active", latency: "99ms", color: "bg-yellow-400", icon: <FaCloudUploadAlt className="text-gray-300" /> },
+        { name: "Frontend", platform: "Django", desc: "Web app frontend", status: "✅ Live", latency: "192ms", color: "bg-blue-400", icon: <SiDjango className="text-green-500" /> },
+        { name: "Backend", platform: "Supabase", desc: "Python API & tasks", status: "🟢 Healthy", latency: "210ms", color: "bg-green-400", icon: <SiPython className="text-yellow-500" /> },
+        { name: "Database", platform: "PostgreSQL", desc: "Collection DB", status: "🟢 Connected", latency: "158ms", color: "bg-emerald-400", icon: <SiPostgresql className="text-blue-700" /> },
+        { name: "Background Task", platform: "Celery", desc: "Async data processing", status: "⚡ Active", latency: "99ms", color: "bg-yellow-400", icon: <FaCloudUploadAlt className="text-yellow-300" /> },
       ],
     },
     {
@@ -209,10 +209,10 @@ const WorkspaceView = ({ currentProject, currentFile }) => {
       ],
       lastDeployed: "1h ago",
       services: [
-        { name: "Frontend", platform: "React", desc: "Web app frontend", status: "✅ Live", latency: "175ms", color: "bg-blue-400", icon: <FaReact className="text-gray-300" /> },
-        { name: "Backend", platform: "Node.js", desc: "API & real-time processing", status: "🟢 Healthy", latency: "205ms", color: "bg-green-400", icon: <IoLogoJavascript className="text-gray-300" /> },
-        { name: "Database", platform: "MongoDB", desc: "Movies & users DB", status: "🟢 Connected", latency: "160ms", color: "bg-emerald-400", icon: <SiMongodb className="text-gray-300" /> },
-        { name: "Recommendation Engine", platform: "Python ML", desc: "Collaborative filtering", status: "⚡ Active", latency: "95ms", color: "bg-yellow-400", icon: <SiPython className="text-gray-300" /> },
+        { name: "Frontend", platform: "React", desc: "Web app frontend", status: "✅ Live", latency: "175ms", color: "bg-blue-400", icon: <FaReact className="text-blue-300" /> },
+        { name: "Backend", platform: "Node.js", desc: "API & real-time processing", status: "🟢 Healthy", latency: "205ms", color: "bg-green-400", icon: <IoLogoJavascript className="text-yellow-300" /> },
+        { name: "Database", platform: "MongoDB", desc: "Movies & users DB", status: "🟢 Connected", latency: "160ms", color: "bg-emerald-400", icon: <SiMongodb className="text-green-300" /> },
+        { name: "Recommendation Engine", platform: "Python ML", desc: "Collaborative filtering", status: "⚡ Active", latency: "95ms", color: "bg-yellow-400", icon: <SiPython className="text-yellow-500" /> },
       ],
     },
   ];
