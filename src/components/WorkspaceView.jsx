@@ -14,6 +14,7 @@ import three from "../assets/3.jpg";
 import Backend from "./Backend";
 import Frontend from "./Frontend";
 import WebSocket from "./WebSocket";
+import AboutMe from "./IndividualFileComponents/AboutMe";
 
 const WorkspaceView = ({ currentProject, currentFile }) => {
   if (!currentProject) {
@@ -220,7 +221,7 @@ const WorkspaceView = ({ currentProject, currentFile }) => {
   const project = projects.find((p) => p.id === currentProject.name);
 
   // Example renderings for some files
-  if (currentProject.name === "about.html") return <div className="p-4">👋 About Me page with HTML-style layout.</div>;
+  if (currentProject.name === "about.html") return <AboutMe/>;
   if (currentProject.name === "github.md") return <div className="p-4">📦 GitHub info in markdown format.</div>;
   if (currentProject.name === "contact.py") return <div className="p-4">📞 Contact info (Python script style).</div>;
   if (currentProject.name === "hobbies.js") return <div className="p-4">🎮 My hobbies listed as JS array.</div>;
