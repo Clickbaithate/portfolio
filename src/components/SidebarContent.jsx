@@ -11,7 +11,7 @@ import Git from "./SidebarComponents/Git";
 import Debug from "./SidebarComponents/Debug";
 import Extensions from "./SidebarComponents/Extensions";
 
-const SidebarContent = ({ currentMenu, currentProject, fileExplorerMode, currentFile, setCurrentFile }) => {
+const SidebarContent = ({ onOpenFileExplorer, currentMenu, currentProject, fileExplorerMode, currentFile, setCurrentFile }) => {
 
   const [folderOpenMessage, setFolderOpenMessage] = useState(true);
   const [showProject, setShowProject] = useState(true);
@@ -31,7 +31,7 @@ const SidebarContent = ({ currentMenu, currentProject, fileExplorerMode, current
             </div>
             <div className="flex flex-col">
               <p className="mx-4 pt-4">You have not yet opened a folder.</p>
-              <div className="py-1 w-[90%] mx-4 text-center rounded-sm my-3 bg-bg-accent-2 text-text">Open Folder</div>
+              <div className="py-1 w-[90%] mx-4 text-center rounded-sm my-3 bg-bg-accent-2 text-text cursor-pointer" onClick={() => onOpenFileExplorer("folder")}>Open Folder</div>
               <p className="mx-4">Opening a folder will close all currently open editors. To keep them open, add a folder instead.</p>
               <p className="mx-4 py-3">You can clone a repository locally.</p>
               <div className="py-1 w-[90%] mx-4 text-center rounded-sm bg-bg-accent-2 text-text">Clone Repository</div>

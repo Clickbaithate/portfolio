@@ -4,7 +4,7 @@ import WorkspaceView from "./WorkspaceView";
 import SidebarContent from "./SidebarContent";
 import FileExplorer from "./FileExplorer";
 
-const MainContent = ({ fileExplorerMode, onSelectFile, currentProject, onCloseExplorer, currentFile, setCurrentFile, setPos }) => {
+const MainContent = ({ onOpenFileExplorer, fileExplorerMode, onSelectFile, currentProject, onCloseExplorer, currentFile, setCurrentFile, setPos }) => {
   const [menuToggle, setMenuToggle] = useState(true);
   const [currentMenu, setCurrentMenu] = useState("File");
 
@@ -22,7 +22,7 @@ const MainContent = ({ fileExplorerMode, onSelectFile, currentProject, onCloseEx
 
       {menuToggle && (
         <div className="min-w-1/6 max-w-1/6 h-full bg-bg text-text">
-          <SidebarContent currentMenu={currentMenu} currentProject={currentProject} fileExplorerMode={fileExplorerMode} currentFile={currentFile} setCurrentFile={setCurrentFile} />
+          <SidebarContent onOpenFileExplorer={onOpenFileExplorer} currentMenu={currentMenu} currentProject={currentProject} fileExplorerMode={fileExplorerMode} currentFile={currentFile} setCurrentFile={setCurrentFile} />
         </div>
       )}
 

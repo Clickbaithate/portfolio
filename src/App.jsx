@@ -29,6 +29,7 @@ function App() {
     <div className='flex flex-col justify-between w-full h-screen font-mono'>
       <TopBar onOpenFileExplorer={handleOpenFileExplorer} fileExplorerMode={fileExplorerMode}/>
       <MainContent
+        onOpenFileExplorer={handleOpenFileExplorer}
         fileExplorerMode={fileExplorerMode}
         onSelectFile={handleSelectFile}
         currentProject={currentProject}
