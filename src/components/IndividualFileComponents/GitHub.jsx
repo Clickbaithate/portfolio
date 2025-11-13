@@ -9,17 +9,17 @@ const GitHub = () => {
       .then((res) => res.json())
       .then(setUser)
       .catch(console.error);
-      document.body.style.overflow = "hidden";
 
-  // Cleanup on unmount
-  return () => {
-    document.body.style.overflow = "auto";
-  };
+    // Disable scrolling
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, []);
 
   if (!user)
     return (
-      <div className="flex justify-center items-center h-screen bg-bg-accent text-gray-400">
+      <div className="h-screen w-full bg-bg-accent text-text flex flex-col items-center justify-center overflow-hidden">
         Loading GitHub profile...
       </div>
     );
@@ -64,26 +64,30 @@ const GitHub = () => {
 
       {/* Stats Cards */}
       <div className="grid md:grid-cols-2 gap-4 max-w-3xl w-full justify-center items-center place-items-center scale-90">
-        <img
-          src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=tokyonight&hide_title=true`}
-          alt="GitHub Stats"
-          className="rounded-xl shadow-xl w-[340px]"
-        />
-        <img
-          src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=tokyonight`}
-          alt="Top Languages"
-          className="rounded-xl shadow-xl w-[340px]"
-        />
+        <div className="rounded-xl shadow-xl bg-bg p-2 w-86 flex justify-center items-center overflow-hidden">
+          <img
+            src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=tokyonight&hide_title=true&hide_rank=true`}
+            alt="GitHub Stats"
+            className="object-contain w-full h-full"
+          />
+        </div>
+        <div className="rounded-xl shadow-xl bg-bg p-2 w-96 flex justify-center items-center overflow-hidden">
+          <img
+            src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=tokyonight&hide_title=true`}
+            alt="Top Languages"
+            className="object-contain w-full h-full"
+          />
+        </div>
       </div>
 
       {/* Contribution Graph */}
-      <div className="mt-6 max-w-3xl w-full text-center scale-90">
-        <h2 className="text-xl font-semibold mb-3">GitHub Contributions</h2>
-        <div className="backdrop-blur-md bg-white/5 p-3 rounded-xl shadow-lg">
+      <div className="mt-5 max-w-3xl w-full text-center scale-90">
+        <h2 className="text-xl font-semibold mb-2">GitHub Contributions</h2>
+        <div className="backdrop-blur-md bg-white/5 p-3 rounded-xl shadow-lg border border-gray-800 w-[700px] mx-auto">
           <img
             src={`https://ghchart.rshah.org/00FF7F/${username}`}
             alt="GitHub Contribution Chart"
-            className="w-full rounded-md border border-gray-800"
+            className="w-full rounded-md"
           />
         </div>
         <p className="text-xs text-gray-500 mt-2">

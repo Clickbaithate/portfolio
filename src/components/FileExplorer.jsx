@@ -126,7 +126,7 @@ const FileExplorer = ({ mode, onSelectFile, onClose }) => {
                   <div className="w-1/2">{file.name}</div>
                   <div className="w-1/4">{file.date}</div>
                   <div className="w-1/8">{file.size}</div>
-                  <div className="w-1/8">{file.kind}</div>
+                  <div className="w-1/8 truncate">{file.kind}</div>
                 </div>
               ))}
 

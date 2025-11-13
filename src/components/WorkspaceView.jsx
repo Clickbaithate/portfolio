@@ -15,7 +15,9 @@ import Backend from "./Backend";
 import Frontend from "./Frontend";
 import WebSocket from "./WebSocket";
 import AboutMe from "./IndividualFileComponents/AboutMe";
-import GitHub from "../GitHub";
+import GitHub from "./IndividualFileComponents/GitHub";
+import Contact from "./IndividualFileComponents/Contact";
+import Hobbies from "./IndividualFileComponents/Hobbies";
 
 const WorkspaceView = ({ currentProject, currentFile }) => {
   if (!currentProject) {
@@ -224,8 +226,8 @@ const WorkspaceView = ({ currentProject, currentFile }) => {
   // Example renderings for some files
   if (currentProject.name === "about.html") return <AboutMe/>;
   if (currentProject.name === "github.md") return <GitHub/>;
-  if (currentProject.name === "contact.py") return <div className="p-4">📞 Contact info (Python script style).</div>;
-  if (currentProject.name === "hobbies.js") return <div className="p-4">🎮 My hobbies listed as JS array.</div>;
+  if (currentProject.name === "contact.py") return <Contact/>
+  if (currentProject.name === "hobbies.js") return <Hobbies/>
 
   if (currentFile === "readme") return <ReadMe project={project} />
   else if (currentFile === "architecture") return <Architecture image={project.image} />
