@@ -22,6 +22,8 @@ const FileExplorer = ({ mode, onSelectFile, onClose }) => {
     { name: "miniangel", date: "Oct 10, 2025", size: "--", kind: "Folder" },
     { name: "tacmap", date: "Oct 11, 2025", size: "--", kind: "Folder" },
     { name: "cinevault", date: "Oct 12, 2025", size: "--", kind: "Folder" },
+    { name: "pennypal", date: "Oct 13, 2025", size: "--", kind: "Folder" }, 
+    { name: "funkovault", date: "Oct 14, 2025", size: "--", kind: "Folder" }
   ];
 
   const [width, setWidth] = useState("w-3/4");
