@@ -50,7 +50,7 @@ const BottomBar = ({ line, column }) => {
           </div>
         </Tooltip>
 
-        <Tooltip message="Active workspace">
+        <Tooltip message="Connected to Discord Gateway. Click to Disconnect.">
           <p className="cursor-pointer">Discord RPC</p>
         </Tooltip>
       </div>
