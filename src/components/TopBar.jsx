@@ -24,7 +24,7 @@ const TopBar = ({ onOpenFileExplorer, fileExplorerMode }) => {
     <div className="w-full h-8 flex items-center justify-between relative select-none text-text border-b-1 border-accent bg-bg">
       <div className="flex items-end space-x-3 mx-3">
         <VscVscode className="text-blue-500" size={22}/>
-        <div onClick={() => {if (fileExplorerMode === null) handleMenuClick("File")}} className="cursor-pointer px-1 rounded hover:bg-bg-accent">File</div>
+        <div onClick={() => {if (fileExplorerMode === null) handleMenuClick("File")}} className="cursor-pointer px-1 rounded hover:bg-bg-accent animate-pulse">File</div>
         <div className="cursor-pointer px-1 rounded hover:bg-bg-accent">Edit</div>
         <div className="cursor-pointer px-1 rounded hover:bg-bg-accent">Selection</div>
         <div className="cursor-pointer px-1 rounded hover:bg-bg-accent">View</div>
