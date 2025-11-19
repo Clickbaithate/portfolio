@@ -1,65 +1,90 @@
 import pfp from "../../assets/pfp.jpg";
+import astronomy from "../../assets/hobbies/astronomy.jpg";
+import astronomy2 from "../../assets/hobbies/astronomy2.jpg";
+import traveling from "../../assets/hobbies/traveling.jpg";
+import traveling2 from "../../assets/hobbies/traveling2.jpg";
+import gaming from "../../assets/hobbies/gaming.jpg";
+import gaming2 from "../../assets/hobbies/gaming2.jpg";
+import cooking from "../../assets/hobbies/cooking.jpg";
+import cooking2 from "../../assets/hobbies/cooking2.jpg";
+import reading from "../../assets/hobbies/reading.jpg";
+import reading2 from "../../assets/hobbies/reading2.jpg";
+
+import guitar from "../../assets/hobbies/guitar.jpg";
+import guitar2 from "../../assets/hobbies/guitar2.jpg";
+
+import soccer from "../../assets/hobbies/soccer.jpg";
+import soccer2 from "../../assets/hobbies/soccer2.jpg";
+
+import motorcycle from "../../assets/hobbies/motorcycle.jpg";
+import motorcycle2 from "../../assets/hobbies/motorcycle2.jpg";
+
+import tech from "../../assets/hobbies/tech.jpg";
+import tech2 from "../../assets/hobbies/tech2.png";
+
+import comics from "../../assets/hobbies/comics.jpg";
+import comics2 from "../../assets/hobbies/comics2.jpg";
 
 const hobbies = [
   {
-    img: pfp,
-    name: "Astronomy",
+    img: astronomy2,
+    name: "🔭 Astronomy 🔭",
     desc: "Stargazing is calming, especially watching the moon. I'm looking to buy a telescope in the near future, but my bank account might disagree.",
-    image: pfp,
+    image: astronomy,
   },
   {
-    img: pfp,
-    name: "Traveling",
+    img: traveling,
+    name: "✈️ Traveling ✈️",
     desc: "Love exploring new places, meeting people, and experiencing different cultures.",
-    image: pfp,
+    image: traveling2,
   },
   {
-    img: pfp,
-    name: "Gaming",
+    img: gaming,
+    name: "🎮 Gaming 🎮",
     desc: "Fun with friends, from cozy single-player adventures to tactical realism matches.",
-    image: pfp,
+    image: gaming2,
   },
   {
-    img: pfp,
-    name: "Cooking",
+    img: cooking,
+    name: "🍳 Cooking 🍳",
     desc: "I love cooking for those closest to me. 2nd best birria tacos in Texas.",
-    image: pfp,
+    image: cooking2,
   },
   {
-    img: pfp,
-    name: "Reading",
+    img: reading,
+    name: "📚 Reading 📚",
     desc: "Surprisingly clears the mind very well. I used to love fiction but now it's most non-fiction with some folklore.",
-    image: pfp,
+    image: reading2,
   },
   {
-    img: pfp,
-    name: "Guitar",
+    img: guitar,
+    name: "🎸 Guitar 🎸",
     desc: "The 12-string sounds so much better than the 6-string. I used to play until blistering and then some more.",
-    image: pfp,
+    image: guitar2,
   },
   {
-    img: pfp,
-    name: "Soccer",
+    img: soccer2,
+    name: "⚽ Soccer ⚽",
     desc: "Could've gone pro if not for the knee injury. I swear I used to fly when being goalie.",
-    image: pfp,
+    image: soccer,
   },
   {
-    img: pfp,
-    name: "Motorcycles",
+    img: motorcycle,
+    name: "🏍️ Motorcycles 🏍️",
     desc: "Genuinely feels like you're soaring through the sky. The adrenaline is addicting, but even the peaceful rides feel heavenly.",
-    image: pfp,
+    image: motorcycle2,
   },
   {
-    img: pfp,
-    name: "Tech",
+    img: tech,
+    name: "💻 Tech 💻",
     desc: "Building tools, creating ideas, and watching the future take shape.",
-    image: pfp,
+    image: tech2,
   },
   {
-    img: pfp,
-    name: "Comics",
+    img: comics,
+    name: "🕷️ Comics 🕷️",
     desc: "Spider-Man 2099 has been the favorite ever since mistaking his comic for Ultimate Spider-Man as a kid.",
-    image: pfp,
+    image: comics2,
   },
 ];
 
