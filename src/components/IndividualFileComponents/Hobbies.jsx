@@ -90,7 +90,7 @@ const hobbies = [
 
 const Hobbies = () => {
   return (
-    <div className="flex flex-col items-center justify-center max-h-screen w-full bg-bg text-text overflow-hidden px-6">
+    <div className="flex flex-col items-center justify-center max-h-screen w-full bg-bg-accent text-text overflow-hidden px-6">
       <h1 className="text-3xl font-bold mb-8 text-center">Hobbies & Interests</h1>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
@@ -102,7 +102,7 @@ const Hobbies = () => {
             {/* Card Inner */}
             <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
               {/* Front */}
-              <div className="absolute inset-0 bg-bg-accent rounded-2xl border border-white/10 flex flex-col items-center justify-center text-center shadow-lg backface-hidden">
+              <div className="absolute inset-0 bg-bg rounded-2xl border border-white/10 flex flex-col items-center justify-center text-center shadow-lg backface-hidden">
                 <img src={hobby.img} alt={hobby.name} className="w-36 h-36 mb-2 object-cover rounded-full" />
                 <p className="font-medium">{hobby.name}</p>
               </div>
