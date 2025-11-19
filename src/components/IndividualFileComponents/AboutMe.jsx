@@ -57,7 +57,7 @@ const AboutMe = () => {
   }, [letterIndex, deleting, titleIndex]);
 
   return (
-    <section className="bg-bg w-full h-[99%] flex border-l-1 border-border overflow-hidden">
+    <section className="bg-bg-accent w-full h-[99%] flex border-l-1 border-border overflow-hidden">
       {/* Left Side */}
       <div className="w-1/2 flex flex-col items-center justify-center p-12 gap-8">
         <img
@@ -127,7 +127,7 @@ const AboutMe = () => {
                 }}
               >
                 <div className="flex flex-col items-center justify-center">
-                  <div className="bg-bg-accent w-20 h-20 rounded-2xl flex items-center justify-center text-4xl shadow-lg hover:scale-125 hover:z-50 transition-all duration-300">
+                  <div className="bg-bg w-20 h-20 rounded-2xl flex items-center justify-center text-4xl shadow-lg hover:scale-125 hover:z-50 transition-all duration-300">
                     {hobby.icon}
                   </div>
                   <span className="text-text-muted mt-2 text-sm font-semibold text-center w-24">
