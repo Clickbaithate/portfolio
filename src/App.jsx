@@ -3,6 +3,7 @@ import './App.css';
 import TopBar from './components/TopBar';
 import MainContent from './components/MainContent';
 import BottomBar from './components/BottomBar';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [fileExplorerMode, setFileExplorerMode] = useState(null);
@@ -47,6 +48,7 @@ function App() {
 
   return (
     <div className='flex flex-col justify-between w-full h-screen font-mono'>
+      <Analytics/>
       <TopBar onOpenFileExplorer={handleOpenFileExplorer} fileExplorerMode={fileExplorerMode} />
       <MainContent
         onOpenFileExplorer={handleOpenFileExplorer}
